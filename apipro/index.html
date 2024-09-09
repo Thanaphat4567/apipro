@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>พยากรณ์อากาศ</title>
+    <link rel="stylesheet" href="styles/weather.css">
+</head>
+<body>
+    <div class="weather-app">
+        <h1>พยากรณ์อากาศ</h1>
+        <div class="weather-container">
+            <label for="province">เลือกจังหวัด:</label>
+            <select id="province">
+                <option value="Sakon Nakhon, TH">สกลนคร</option>
+                <option value="Bangkok, TH">กรุงเทพมหานคร</option>
+                <option value="Chiang Mai, TH">เชียงใหม่</option>
+                <option value="Phuket, TH">ภูเก็ต</option>
+                <option value="Khon Kaen, TH">ขอนแก่น</option>
+                <option value="Nakhon Ratchasima, TH">นครราชสีมา</option>
+                <option value="Hat Yai, TH">หาดใหญ่</option>
+                <option value="Chiang Rai, TH">เชียงราย</option>
+                <option value="Surat Thani, TH">สุราษฎร์ธานี</option>
+                <option value="Udon Thani, TH">อุดรธานี</option>
+                <option value="Nakhon Si Thammarat, TH">นครศรีธรรมราช</option>
+                <option value="Pattaya, TH">พัทยา</option>
+                <option value="Krabi, TH">กระบี่</option>
+                <option value="Mae Hong Son, TH">แม่ฮ่องสอน</option>
+                <option value="Lampang, TH">ลำปาง</option>
+                <option value="Trang, TH">ตรัง</option>
+                <option value="Sukhothai, TH">สุโขทัย</option>
+            </select>
+            <button id="get-weather">แสดงพยากรณ์อากาศ</button>
+        </div>
+        
+        <div id="weather-result"></div>
+        <canvas id="rain-canvas"></canvas>
+    </div>
+
+    <script src="scripts/weather.js"></script>
+</body>
+</html>

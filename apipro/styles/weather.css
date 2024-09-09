@@ -1,0 +1,99 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  text-align: center;
+  background: #f0f0f0;
+  transition: background 0.5s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  color: #2c3e50;
+  margin: 20px 0;
+}
+
+.weather-app {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-container,
+#weather-result {
+  margin: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.weather-container label {
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+.weather-container select,
+.weather-container button {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.weather-container button {
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.weather-container button:hover {
+  background: #2980b9;
+}
+
+.weather-icon {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.sunny-background {
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+}
+
+.rainy-background {
+  background: linear-gradient(to bottom, #4c9f70, #4e54c8);
+}
+
+.cloudy-background {
+  background: linear-gradient(to bottom, #b4e5b4, #d0e2e8);
+}
+
+.dry-background {
+  background: linear-gradient(to bottom, #ffdfba, #ffab91);
+}
+
+.humid-background {
+  background: linear-gradient(to bottom, #a0c4ff, #c4e0ff);
+}
+
+#rain-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
