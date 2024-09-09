@@ -5,24 +5,31 @@
   box-sizing: border-box;
 }
 
+/* Global body styles */
 body {
   font-family: 'Arial', sans-serif;
   color: #333;
   text-align: center;
   background: #f0f0f0;
   transition: background 0.5s ease-in-out;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  overflow: hidden;
 }
 
+/* Header styles */
 h1 {
   color: #2c3e50;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
   margin: 20px 0;
+  font-weight: 700;
 }
 
+/* Weather App container */
 .weather-app {
   position: relative;
   z-index: 1;
@@ -31,27 +38,37 @@ h1 {
   align-items: center;
 }
 
-.weather-container,
-#weather-result {
-  margin: 20px;
+/* Weather Container Styles */
+.weather-container {
+  margin: 20px auto;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.3); /* Glass effect */
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   display: inline-block;
+  backdrop-filter: blur(15px); /* Glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease, background 0.5s ease;
 }
 
+.weather-container:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Weather Form (Province selection and button) */
 .weather-container label {
-  font-size: 1.1em;
+  font-size: 1.2em;
+  font-weight: 600;
   margin-right: 10px;
 }
 
 .weather-container select,
 .weather-container button {
-  padding: 10px;
-  font-size: 1em;
+  padding: 12px;
+  font-size: 1.1em;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 5px;
 }
 
@@ -60,17 +77,60 @@ h1 {
   color: white;
   border: none;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .weather-container button:hover {
   background: #2980b9;
+  transform: scale(1.1);
 }
 
+/* Weather Result container */
+#weather-result {
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Weather icon and data display */
 .weather-icon {
-  font-size: 3em;
-  margin-bottom: 10px;
+  font-size: 4em;
+  margin-bottom: 15px;
+  color: #f39c12;
+  animation: rotate-icon 2s infinite ease-in-out;
 }
 
+@keyframes rotate-icon {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(20deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.weather-description {
+  font-size: 1.4em;
+  color: #555;
+  margin: 15px 0;
+}
+
+.temperature {
+  font-size: 2.5em;
+  color: #e67e22;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.humidity {
+  font-size: 1.2em;
+  color: #3498db;
+  margin: 10px 0;
+}
+
+/* Background Styles for weather conditions */
 .sunny-background {
   background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
 }
@@ -91,9 +151,20 @@ h1 {
   background: linear-gradient(to bottom, #a0c4ff, #c4e0ff);
 }
 
+/* Rain animation canvas */
 #rain-canvas {
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+/* Add glowing effect */
+.weather-container,
+#weather-result {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.weather-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
 }
